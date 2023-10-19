@@ -1,2 +1,3 @@
-console.log("Welcome to the Brain Games!");
-console.log("Hello, Znakarik!");
+import cli from '../src/cli.js';
+
+cli();
