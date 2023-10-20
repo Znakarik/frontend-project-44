@@ -4,3 +4,9 @@ start-app:
 
 publish:
 	npm publish --dry-run
+
+prettier:
+	npx prettier --write .
+
+eslint:
+	npx eslint . --fix
