@@ -1,11 +1,11 @@
 import gameCore from "../GameEngine.js";
 import { CalculatorQuestionGenerator } from "./CalculatorQuestionGenerator.js";
-import { RuleGenerator } from "../general/GameRulesVisibility.js";
+import { RuleAware } from "../general/RuleAware.js";
 
 const game = () => {
   gameCore(
     new CalculatorQuestionGenerator(),
-    new RuleGenerator("What is the result of the expression?"),
+    new RuleAware("What is the result of the expression?"),
   );
 };
 

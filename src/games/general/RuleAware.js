@@ -1,4 +1,4 @@
-export class RuleGenerator {
+export class RuleAware {
   constructor(rules) {
     this._rules = rules;
   }
