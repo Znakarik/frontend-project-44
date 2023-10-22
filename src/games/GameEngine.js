@@ -33,6 +33,6 @@ const greetingAndGetName = () => {
 
 const getClientDecision = () => readlineSync.question("Your answer: ");
 
-const getName = () => readlineSync.question("May I have your name?");
+const getName = () => readlineSync.question("May I have your name? ");
 
 export default gameCore;

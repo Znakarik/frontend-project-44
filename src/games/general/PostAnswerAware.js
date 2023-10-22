@@ -1,9 +1,6 @@
 export class PostAnswerAware {
-    constructor(negativeAnswer) {
-        this._negativeAnswer = negativeAnswer;
-    }
 
     getNegative = (rightAnswer, wrongAnswer) => {
-
+        return `'${wrongAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`
     }
 }
