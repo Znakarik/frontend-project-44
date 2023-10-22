@@ -1,9 +1,14 @@
 export class AnswerChecker {
   constructor(rightAnswer) {
-    this.rightAnswer = rightAnswer;
+    this._rightAnswer = rightAnswer;
   }
 
   isRightAnswer(clientAnswer) {
-    return this.rightAnswer === clientAnswer;
+    return this._rightAnswer === clientAnswer;
+  }
+
+
+  get rightAnswer() {
+    return this._rightAnswer;
   }
 }

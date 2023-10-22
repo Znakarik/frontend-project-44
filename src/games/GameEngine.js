@@ -2,10 +2,10 @@ import readlineSync from "readline-sync";
 
 const MAX_WIN_AMOUNT = 3;
 
-const gameCore = (questionGenerator, ruleGenerator) => {
+const gameCore = (questionGenerator, ruleAware, postAnswerAware = null) => {
   const name = greetingAndGetName();
   let currentWinAmount = 0;
-  console.log(ruleGenerator.getRules());
+  console.log(ruleAware.getRules());
   while (currentWinAmount < MAX_WIN_AMOUNT) {
     let round = questionGenerator.generate();
     let answerChecker = round.getAnswerChecker();
@@ -15,6 +15,9 @@ const gameCore = (questionGenerator, ruleGenerator) => {
       currentWinAmount++;
       console.log("Correct!");
     } else {
+      if (postAnswerAware != null) {
+        console.log(postAnswerAware.getNegative(answerChecker.rightAnswer, decision))
+      }
       console.log(`Let's try again, ${name}!`);
       break;
     }
