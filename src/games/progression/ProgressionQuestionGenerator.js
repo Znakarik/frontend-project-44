@@ -1,6 +1,5 @@
 import {QuestionGenerator} from "../general/QuestionGenerator.js";
 import {Round} from "../general/Round.js";
-import {AnswerChecker} from "../general/AnswerChecker.js";
 import {ProgressionAnswerChecker} from "./ProgressionAnswerChecker.js";
 import {ClientQuestion} from "../general/ClientQuestion.js";
 
