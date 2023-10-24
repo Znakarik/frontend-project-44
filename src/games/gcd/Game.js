@@ -8,7 +8,7 @@ const game = () => {
     new GameEngine(new CustomReadlineSync()).execute(
         new GcdQuestionGenerator(),
         new RuleAware("Find the greatest common divisor of given numbers."),
-        new PostAnswerAware()
+        new PostAnswerAware(false, true)
     );
 }
 

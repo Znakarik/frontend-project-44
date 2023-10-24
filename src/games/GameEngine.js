@@ -1,4 +1,3 @@
-
 const MAX_WIN_AMOUNT = 3;
 
 export class GameEngine {
@@ -6,7 +5,7 @@ export class GameEngine {
         this.readLineSync = readLineSync;
     }
 
-    execute = (questionGenerator, ruleAware, postAnswerAware = null) => {
+    execute = (questionGenerator, ruleAware, postAnswerAware) => {
         const name = this.#greetingAndGetName();
         let currentWinAmount = 0;
         this.#log(ruleAware.getRules());
@@ -18,8 +17,11 @@ export class GameEngine {
             if (answerChecker.isRightAnswer(decision)) {
                 currentWinAmount++;
                 this.#log("Correct!");
+                if (this.#isLastTry(currentWinAmount) && postAnswerAware.shouldUsePositive()) {
+                    this.#log(postAnswerAware.getPositive(name));
+                }
             } else {
-                if (postAnswerAware != null) {
+                if (postAnswerAware.shouldUseNegative()) {
                     this.#log(postAnswerAware.getNegative(answerChecker.rightAnswer, decision))
                 }
                 this.#log(`Let's try again, ${name}!`);
@@ -27,6 +29,10 @@ export class GameEngine {
             }
         }
     };
+
+    #isLastTry = (currentTry) => {
+        return currentTry === MAX_WIN_AMOUNT;
+    }
 
     #greetingAndGetName = () => {
         this.#log("Welcome to the Brain Games!");

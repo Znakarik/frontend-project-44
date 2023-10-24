@@ -9,7 +9,7 @@ const game = () => {
     new GameEngine(new CustomReadlineSync()).execute(
         new ProgressionQuestionGenerator(),
         new RuleAware("What number is missing in the progression?"),
-        new PostAnswerAware()
+        new PostAnswerAware(false, true)
     );
 }
 

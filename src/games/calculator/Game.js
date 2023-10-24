@@ -8,7 +8,7 @@ const game = () => {
     new GameEngine(new CustomReadlineSync()).execute(
         new CalculatorQuestionGenerator(),
         new RuleAware("What is the result of the expression?"),
-        new PostAnswerAware()
+        new PostAnswerAware(false, true)
     );
 };
 

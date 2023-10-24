@@ -35,7 +35,7 @@ describe("suite", () => {
         underTest.execute(
             questionGenerator,
             new RuleAware(),
-            new PostAnswerAware()
+            new PostAnswerAware(false, false)
         );
 
         // then
@@ -63,7 +63,7 @@ describe("suite", () => {
         underTest.execute(
             questionGenerator,
             new RuleAware(),
-            new PostAnswerAware()
+            new PostAnswerAware(false, false)
         );
 
         // then
