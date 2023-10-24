@@ -1,7 +1,7 @@
 import {QuestionGenerator} from "../general/QuestionGenerator.js";
 import {Round} from "../general/Round.js";
 import {ClientQuestion} from "../general/ClientQuestion.js";
-import {EvenAnswerChecker} from "./EvenAnswerChecker.js";
+import {YesNoAnswerChecker} from "../general/YesNoAnswerChecker.js";
 
 export class EvenQuestionGenerator extends QuestionGenerator {
 
@@ -9,7 +9,7 @@ export class EvenQuestionGenerator extends QuestionGenerator {
         const number = Math.round(Math.random() * 100);
         const rightAnswer = isEven(number) ? "yes" : "no";
         return new Round(
-            new EvenAnswerChecker(rightAnswer),
+            new YesNoAnswerChecker(rightAnswer),
             new ClientQuestion(number)
         );
     }

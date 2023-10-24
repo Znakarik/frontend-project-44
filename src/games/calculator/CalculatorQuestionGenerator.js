@@ -1,7 +1,7 @@
 import { QuestionGenerator } from "../general/QuestionGenerator.js";
 import { Round } from "../general/Round.js";
-import { CalculatorAnswerChecker } from "./CalculatorAnswerChecker.js";
 import { ClientQuestion } from "../general/ClientQuestion.js";
+import {NumbersAnswerChecker} from "../general/NumbersAnswerChecker.js";
 
 export class CalculatorQuestionGenerator extends QuestionGenerator {
   generate = () => {
@@ -27,7 +27,7 @@ export class CalculatorQuestionGenerator extends QuestionGenerator {
     }
 
     return new Round(
-      new CalculatorAnswerChecker(rightAnswer),
+      new NumbersAnswerChecker(rightAnswer),
       new ClientQuestion(stringQuestion),
     );
   };

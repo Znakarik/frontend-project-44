@@ -1,6 +1,6 @@
 import {QuestionGenerator} from "../general/QuestionGenerator.js";
 import {Round} from "../general/Round.js";
-import {ProgressionAnswerChecker} from "./ProgressionAnswerChecker.js";
+import {NumbersAnswerChecker} from "../general/NumbersAnswerChecker.js";
 import {ClientQuestion} from "../general/ClientQuestion.js";
 
 const MAX_PROGRESSION_SIZE = 10;
@@ -23,7 +23,7 @@ export class ProgressionQuestionGenerator extends QuestionGenerator {
         const questionToClient = this.#progressionToString(progression, missingIndexInProgression);
 
         return new Round(
-            new ProgressionAnswerChecker(rightNumber),
+            new NumbersAnswerChecker(rightNumber),
             new ClientQuestion(questionToClient)
         );
     }

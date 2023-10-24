@@ -2,7 +2,7 @@ import {QuestionGenerator} from "../general/QuestionGenerator.js";
 import {Round} from "../general/Round.js";
 import {ClientQuestion} from "../general/ClientQuestion.js";
 import {GcdFinder} from "./GcdFinder.js";
-import {GcdAnswerChecker} from "./GcdAnswerChecker.js";
+import {NumbersAnswerChecker} from "../general/NumbersAnswerChecker.js";
 
 export class GcdQuestionGenerator extends QuestionGenerator {
     generate = () => {
@@ -12,7 +12,7 @@ export class GcdQuestionGenerator extends QuestionGenerator {
         const gcd = new GcdFinder(left, right).find();
 
         return new Round(
-            new GcdAnswerChecker(gcd),
+            new NumbersAnswerChecker(gcd),
             new ClientQuestion(`${left} ${right}`)
         )
     }

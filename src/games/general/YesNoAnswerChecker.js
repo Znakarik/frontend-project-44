@@ -1,6 +1,6 @@
-import {AnswerChecker} from "../general/AnswerChecker.js";
+import {AnswerChecker} from "./AnswerChecker.js";
 
-export class EvenAnswerChecker extends AnswerChecker {
+export class YesNoAnswerChecker extends AnswerChecker {
     constructor(rightAnswer) {
         super(rightAnswer);
     }
