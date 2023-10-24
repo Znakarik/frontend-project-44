@@ -6,6 +6,6 @@ import { ClientQuestion } from "../../../src/games/general/ClientQuestion.js";
 test("create no null round object", () => {
   let result = new CalculatorQuestionGenerator().generate();
   expect(result).toBeInstanceOf(Round);
-  expect(result.getQuestionForClient()).toBeTruthy();
+  expect(typeof result.getQuestionForClient()).toBe("string");
   expect(result.getAnswerChecker()).toBeTruthy();
 });
