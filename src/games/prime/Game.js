@@ -8,7 +8,7 @@ const game = () => {
     new GameEngine(new CustomReadlineSync()).execute(
         new PrimeQuestionGenerator(),
         new RuleAware("Answer \"yes\" if given number is prime. Otherwise answer \"no\"."),
-        new PostAnswerAware(false, true)
+        new PostAnswerAware(true, true)
     );
 }
 
