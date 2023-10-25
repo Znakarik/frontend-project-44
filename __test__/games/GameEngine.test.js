@@ -9,7 +9,27 @@ import PostAnswerAware from '../../src/games/general/PostAnswerAware.js';
 import Round from '../../src/games/general/Round.js';
 import AnswerChecker from '../../src/games/general/AnswerChecker.js';
 import ClientQuestion from '../../src/games/general/ClientQuestion.js';
-/* eslint-disable no-unused-vars */
+
+function createCustomReadlineSyncReceiveSpy(readlineSync, returnVal) {
+  return jest.spyOn(readlineSync, 'receive');
+}
+
+function createCustomReadlineSyncSendSpy(readLineSync) {
+  return jest.spyOn(readLineSync, 'send').mockReturnValue('');
+}
+
+function createAnswerCheckerSpy(right, answerChecker) {
+  return jest.spyOn(answerChecker, 'isRightAnswer');
+}
+
+function createQuestionGeneratorSpy(questionGenerator, answerChecker) {
+  return jest.spyOn(questionGenerator, 'generate')
+      .mockImplementation(() => new Round(
+          answerChecker,
+          new ClientQuestion('questionToClient'),
+      ));
+}
+
 describe('suite', () => {
   const answer = 'rightAnswer';
 
@@ -18,7 +38,7 @@ describe('suite', () => {
   const answerChecker = new AnswerChecker(answer);
 
   test('write answers', () => {
-    const spyCustomReadlineSyncReceive = createCustomReadlineSyncReceiveSpy(readlineSync, 'Olya')
+    createCustomReadlineSyncReceiveSpy(readlineSync, 'Olya')
       .mockReturnValueOnce('Olya')
       .mockReturnValueOnce(answer)
       .mockReturnValueOnce(answer)
@@ -29,7 +49,7 @@ describe('suite', () => {
     const answerCheckerSpy = createAnswerCheckerSpy(true, answerChecker)
       .mockReturnValue(true);
 
-    const questionGeneratorSpy = createQuestionGeneratorSpy(questionGenerator, answerChecker);
+    createQuestionGeneratorSpy(questionGenerator, answerChecker);
 
     const underTest = new GameEngine(readlineSync);
 
@@ -48,7 +68,7 @@ describe('suite', () => {
   });
 
   test('wrong answers', () => {
-    const spyCustomReadlineSyncReceive = createCustomReadlineSyncReceiveSpy(readlineSync, 'Olya')
+    createCustomReadlineSyncReceiveSpy(readlineSync, 'Olya')
       .mockReturnValueOnce('Olya')
       .mockReturnValueOnce(answer);
 
@@ -57,7 +77,7 @@ describe('suite', () => {
     const answerCheckerSpy = createAnswerCheckerSpy(true, answerChecker)
       .mockReturnValue(false);
 
-    const questionGeneratorSpy = createQuestionGeneratorSpy(questionGenerator, answerChecker);
+    createQuestionGeneratorSpy(questionGenerator, answerChecker);
 
     const underTest = new GameEngine(readlineSync);
 
@@ -76,23 +96,3 @@ describe('suite', () => {
     expect(answerCheckerSpy).toBeCalled();
   });
 });
-
-function createCustomReadlineSyncReceiveSpy(readlineSync, returnVal) {
-  return jest.spyOn(readlineSync, 'receive');
-}
-
-function createCustomReadlineSyncSendSpy(readLineSync) {
-  return jest.spyOn(readLineSync, 'send').mockReturnValue('');
-}
-
-function createAnswerCheckerSpy(right, answerChecker) {
-  return jest.spyOn(answerChecker, 'isRightAnswer');
-}
-
-function createQuestionGeneratorSpy(questionGenerator, answerChecker) {
-  return jest.spyOn(questionGenerator, 'generate')
-    .mockImplementation(() => new Round(
-      answerChecker,
-      new ClientQuestion('questionToClient'),
-    ));
-}

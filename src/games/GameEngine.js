@@ -5,7 +5,7 @@ export default class GameEngine {
     this.readLineSync = readLineSync;
   }
 
-  execute = (questionGenerator, ruleAware, postAnswerAware) => {
+  execute (questionGenerator, ruleAware, postAnswerAware) {
     const name = this.#greetingAndGetName();
     let currentWinAmount = 0;
     this.#log(ruleAware.getRules());

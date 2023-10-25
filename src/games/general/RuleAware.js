@@ -1,7 +1,9 @@
 export default class RuleAware {
-  constructor(rules) {
-    this.rules = rules;
-  }
+    constructor(rules) {
+        this.rules = rules;
+    }
 
-  getRules = () => this.rules;
+    getRules() {
+        return this.rules
+    };
 }
