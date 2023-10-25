@@ -4,11 +4,7 @@ export class Round {
     this._clientQuestion = clientQuestion;
   }
 
-  getAnswerChecker = () => {
-    return this._answerChecker;
-  };
+  getAnswerChecker = () => this._answerChecker;
 
-  getQuestionForClient = () => {
-    return this._clientQuestion.getQuestionToClient();
-  };
+  getQuestionForClient = () => this._clientQuestion.getQuestionToClient();
 }

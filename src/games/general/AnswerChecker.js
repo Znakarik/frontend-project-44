@@ -7,7 +7,6 @@ export class AnswerChecker {
     return this._rightAnswer === clientAnswer;
   }
 
-
   get rightAnswer() {
     return this._rightAnswer;
   }

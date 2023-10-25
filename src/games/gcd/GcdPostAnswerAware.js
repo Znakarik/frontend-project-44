@@ -1,6 +1,6 @@
-import {PostAnswerAware} from "../general/PostAnswerAware.js";
+import { PostAnswerAware } from '../general/PostAnswerAware.js';
 
 export class GcdPostAnswerAware extends PostAnswerAware {
-    getNegative = (rightAnswer, wrongAnswer) => {
-    }
+  getNegative = (rightAnswer, wrongAnswer) => {
+  };
 }

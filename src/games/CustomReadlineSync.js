@@ -1,11 +1,9 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 
 export class CustomReadlineSync {
-    send = (str) => {
-        console.log(str);
-    }
+  send = (str) => {
+    console.log(str);
+  };
 
-    receive = (str) => {
-        return readlineSync.question(str);
-    }
+  receive = (str) => readlineSync.question(str);
 }

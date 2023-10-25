@@ -3,7 +3,5 @@ export class ClientQuestion {
     this._questionToClient = questionToClient;
   }
 
-  getQuestionToClient = () => {
-    return this._questionToClient;
-  };
+  getQuestionToClient = () => this._questionToClient;
 }

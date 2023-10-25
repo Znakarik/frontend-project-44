@@ -3,7 +3,5 @@ export class RuleAware {
     this._rules = rules;
   }
 
-  getRules = () => {
-    return this._rules;
-  };
+  getRules = () => this._rules;
 }
