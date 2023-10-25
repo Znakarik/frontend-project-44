@@ -29,15 +29,7 @@ export class ProgressionQuestionGenerator extends QuestionGenerator {
     }
 
     #progressionToString(progression, missingIndex) {
-        let result = "";
-        for (let i = 0; i < progression.length - 1; i++) {
-            if (i === missingIndex) {
-                result += ".."
-            } else {
-                result += progression.at(i);
-            }
-            result += " ";
-        }
-        return result.trim();
+        progression[missingIndex] = '..';
+        return progression.join(' ');
     }
 }
