@@ -33,20 +33,20 @@ export class CalculatorQuestionGenerator extends QuestionGenerator {
   };
 
   generateOperation = () => {
-    let randomNumber = Math.round(Math.random() * 3);
+    let randomNumber = Math.round(Math.random() * 2);
     switch (randomNumber) {
-      case 1:
+      case 0:
         return Operation.multiply;
-      case 2:
+      case 1:
         return Operation.sum;
-      case 3:
+      case 2:
         return Operation.minus;
     }
   };
 }
 
 const Operation = {
-  multiply: 1,
-  sum: 2,
-  minus: 3,
+  multiply: 0,
+  sum: 1,
+  minus: 2,
 };
