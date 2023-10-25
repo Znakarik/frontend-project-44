@@ -1,7 +1,7 @@
 import { describe, expect, test } from '@jest/globals';
-import { EvenQuestionGenerator } from '../../../src/games/even/EvenQuestionGenerator.js';
-import { Round } from '../../../src/games/general/Round.js';
-import { YesNoAnswerChecker } from '../../../src/games/general/YesNoAnswerChecker.js';
+import EvenQuestionGenerator from '../../../src/games/even/EvenQuestionGenerator.js';
+import Round from '../../../src/games/general/Round.js';
+import YesNoAnswerChecker from '../../../src/games/general/YesNoAnswerChecker.js';
 
 describe('suite', () => {
   test('positive', () => {

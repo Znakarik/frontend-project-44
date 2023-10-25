@@ -1,13 +1,13 @@
-export class AnswerChecker {
+export default class AnswerChecker {
   constructor(rightAnswer) {
-    this._rightAnswer = rightAnswer;
+    this.rightAnswer = rightAnswer;
   }
 
   isRightAnswer(clientAnswer) {
-    return this._rightAnswer === clientAnswer;
+    return this.rightAnswer === clientAnswer;
   }
 
-  get rightAnswer() {
-    return this._rightAnswer;
+  get getRightAnswer() {
+    return this.rightAnswer;
   }
 }

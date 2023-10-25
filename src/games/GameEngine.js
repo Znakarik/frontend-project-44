@@ -1,6 +1,6 @@
 const MAX_WIN_AMOUNT = 3;
 
-export class GameEngine {
+export default class GameEngine {
   constructor(readLineSync = null) {
     this.readLineSync = readLineSync;
   }
@@ -15,7 +15,7 @@ export class GameEngine {
       this.#log(`Question: ${round.getQuestionForClient()}`);
       const decision = this.#getClientDecision();
       if (answerChecker.isRightAnswer(decision)) {
-        currentWinAmount++;
+        currentWinAmount += 1;
         this.#log('Correct!');
         if (this.#isLastTry(currentWinAmount) && postAnswerAware.shouldUsePositive()) {
           this.#log(postAnswerAware.getPositive(name));

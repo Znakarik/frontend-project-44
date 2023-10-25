@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { PostAnswerAware } from '../../../src/games/general/PostAnswerAware.js';
+import PostAnswerAware from '../../../src/games/general/PostAnswerAware.js';
 
 describe('suite', () => {
   test('positive', () => {

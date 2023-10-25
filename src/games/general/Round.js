@@ -1,10 +1,10 @@
-export class Round {
+export default class Round {
   constructor(answerChecker, clientQuestion) {
-    this._answerChecker = answerChecker;
-    this._clientQuestion = clientQuestion;
+    this.answerChecker = answerChecker;
+    this.clientQuestion = clientQuestion;
   }
 
-  getAnswerChecker = () => this._answerChecker;
+  getAnswerChecker = () => this.answerChecker;
 
-  getQuestionForClient = () => this._clientQuestion.getQuestionToClient();
+  getQuestionForClient = () => this.clientQuestion.getQuestionToClient();
 }

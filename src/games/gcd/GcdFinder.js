@@ -1,4 +1,4 @@
-export class GcdFinder {
+export default class GcdFinder {
   constructor(left, right) {
     this.left = left;
     this.right = right;

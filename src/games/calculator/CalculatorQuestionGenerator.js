@@ -1,9 +1,9 @@
-import { QuestionGenerator } from '../general/QuestionGenerator.js';
-import { Round } from '../general/Round.js';
-import { ClientQuestion } from '../general/ClientQuestion.js';
-import { NumbersAnswerChecker } from '../general/NumbersAnswerChecker.js';
+import QuestionGenerator from '../general/QuestionGenerator.js';
+import Round from '../general/Round.js';
+import ClientQuestion from '../general/ClientQuestion.js';
+import NumbersAnswerChecker from '../general/NumbersAnswerChecker.js';
 
-export class CalculatorQuestionGenerator extends QuestionGenerator {
+export default class CalculatorQuestionGenerator extends QuestionGenerator {
   generate = () => {
     const left = Math.round(Math.random() * 10);
     const right = Math.round(Math.random() * 10);
@@ -24,6 +24,8 @@ export class CalculatorQuestionGenerator extends QuestionGenerator {
         rightAnswer = left * right;
         stringQuestion = `${left} * ${right}`;
         break;
+      default:
+        throw new Error(`unknown operation = ${operation}`);
     }
 
     return new Round(
@@ -41,6 +43,8 @@ export class CalculatorQuestionGenerator extends QuestionGenerator {
         return Operation.sum;
       case 2:
         return Operation.minus;
+      default:
+        throw new Error('unknown operation');
     }
   };
 }

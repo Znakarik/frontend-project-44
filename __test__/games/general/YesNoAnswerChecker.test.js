@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { YesNoAnswerChecker } from '../../../src/games/general/YesNoAnswerChecker.js';
+import YesNoAnswerChecker from '../../../src/games/general/YesNoAnswerChecker.js';
 
 describe('suite', () => {
   test('positive test', () => {

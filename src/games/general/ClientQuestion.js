@@ -1,7 +1,7 @@
-export class ClientQuestion {
+export default class ClientQuestion {
   constructor(questionToClient) {
-    this._questionToClient = questionToClient;
+    this.questionToClient = questionToClient;
   }
 
-  getQuestionToClient = () => this._questionToClient;
+  getQuestionToClient = () => this.questionToClient;
 }

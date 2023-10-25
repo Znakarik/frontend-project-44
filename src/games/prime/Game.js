@@ -1,8 +1,8 @@
-import { GameEngine } from '../GameEngine.js';
-import { CustomReadlineSync } from '../CustomReadlineSync.js';
-import { PrimeQuestionGenerator } from './PrimeQuestionGenerator.js';
-import { RuleAware } from '../general/RuleAware.js';
-import { PostAnswerAware } from '../general/PostAnswerAware.js';
+import GameEngine from '../GameEngine.js';
+import CustomReadlineSync from '../CustomReadlineSync.js';
+import PrimeQuestionGenerator from './PrimeQuestionGenerator.js';
+import RuleAware from '../general/RuleAware.js';
+import PostAnswerAware from '../general/PostAnswerAware.js';
 
 const game = () => {
   new GameEngine(new CustomReadlineSync()).execute(

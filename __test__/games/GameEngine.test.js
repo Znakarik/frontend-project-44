@@ -1,15 +1,15 @@
 import {
   describe, expect, jest, test,
 } from '@jest/globals';
-import { GameEngine } from '../../src/games/GameEngine.js';
-import { CustomReadlineSync } from '../../src/games/CustomReadlineSync.js';
-import { QuestionGenerator } from '../../src/games/general/QuestionGenerator.js';
-import { RuleAware } from '../../src/games/general/RuleAware.js';
-import { PostAnswerAware } from '../../src/games/general/PostAnswerAware.js';
-import { Round } from '../../src/games/general/Round.js';
-import { AnswerChecker } from '../../src/games/general/AnswerChecker.js';
-import { ClientQuestion } from '../../src/games/general/ClientQuestion.js';
-
+import GameEngine from '../../src/games/GameEngine.js';
+import CustomReadlineSync from '../../src/games/CustomReadlineSync.js';
+import QuestionGenerator from '../../src/games/general/QuestionGenerator.js';
+import RuleAware from '../../src/games/general/RuleAware.js';
+import PostAnswerAware from '../../src/games/general/PostAnswerAware.js';
+import Round from '../../src/games/general/Round.js';
+import AnswerChecker from '../../src/games/general/AnswerChecker.js';
+import ClientQuestion from '../../src/games/general/ClientQuestion.js';
+/* eslint-disable no-unused-vars */
 describe('suite', () => {
   const answer = 'rightAnswer';
 

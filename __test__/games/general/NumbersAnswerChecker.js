@@ -1,5 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { describe, expect, test } from '@jest/globals';
-import { NumbersAnswerChecker } from '../../../src/games/general/NumbersAnswerChecker.js';
+import NumbersAnswerChecker from '../../../src/games/general/NumbersAnswerChecker.js';
 
 describe('suite', () => {
   test('positive', () => {

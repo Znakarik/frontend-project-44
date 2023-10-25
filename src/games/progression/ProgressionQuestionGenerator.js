@@ -1,11 +1,11 @@
-import { QuestionGenerator } from '../general/QuestionGenerator.js';
-import { Round } from '../general/Round.js';
-import { NumbersAnswerChecker } from '../general/NumbersAnswerChecker.js';
-import { ClientQuestion } from '../general/ClientQuestion.js';
+import QuestionGenerator from '../general/QuestionGenerator.js';
+import Round from '../general/Round.js';
+import NumbersAnswerChecker from '../general/NumbersAnswerChecker.js';
+import ClientQuestion from '../general/ClientQuestion.js';
 
 const MAX_PROGRESSION_SIZE = 10;
 
-export class ProgressionQuestionGenerator extends QuestionGenerator {
+export default class ProgressionQuestionGenerator extends QuestionGenerator {
   generate = () => {
     const step = Math.round(Math.random() * 10);
     const initialNumber = Math.round(Math.random() * 10);
@@ -14,6 +14,7 @@ export class ProgressionQuestionGenerator extends QuestionGenerator {
     const progression = [];
 
     progression.push(initialNumber);
+    /* eslint-disable no-plusplus */
     for (let i = 1; i < MAX_PROGRESSION_SIZE; i++) {
       progression.push(progression[i - 1] + step);
     }

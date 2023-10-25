@@ -1,10 +1,10 @@
-import { QuestionGenerator } from '../general/QuestionGenerator.js';
-import { Round } from '../general/Round.js';
-import { ClientQuestion } from '../general/ClientQuestion.js';
-import { GcdFinder } from './GcdFinder.js';
-import { NumbersAnswerChecker } from '../general/NumbersAnswerChecker.js';
+import QuestionGenerator from '../general/QuestionGenerator.js';
+import Round from '../general/Round.js';
+import ClientQuestion from '../general/ClientQuestion.js';
+import GcdFinder from './GcdFinder.js';
+import NumbersAnswerChecker from '../general/NumbersAnswerChecker.js';
 
-export class GcdQuestionGenerator extends QuestionGenerator {
+export default class GcdQuestionGenerator extends QuestionGenerator {
   generate = () => {
     const left = generateNonZero();
     const right = generateNonZero();

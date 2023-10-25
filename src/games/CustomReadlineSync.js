@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export class CustomReadlineSync {
+export default class CustomReadlineSync {
   send = (str) => {
     console.log(str);
   };

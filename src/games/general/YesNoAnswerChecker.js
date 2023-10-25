@@ -1,12 +1,8 @@
-import { AnswerChecker } from './AnswerChecker.js';
+import AnswerChecker from './AnswerChecker.js';
 
-export class YesNoAnswerChecker extends AnswerChecker {
-  constructor(rightAnswer) {
-    super(rightAnswer);
-  }
-
+export default class YesNoAnswerChecker extends AnswerChecker {
   isRightAnswer(clientAnswer) {
-    return isRightAnswer(clientAnswer, this.rightAnswer);
+    return isRightAnswer(clientAnswer, this.getRightAnswer());
   }
 }
 

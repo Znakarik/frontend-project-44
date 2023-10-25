@@ -1,5 +1,5 @@
 import { describe, expect, test } from '@jest/globals';
-import { ProgressionQuestionGenerator } from '../../../src/games/progression/ProgressionQuestionGenerator.js';
+import ProgressionQuestionGenerator from '../../../src/games/progression/ProgressionQuestionGenerator.js';
 
 describe('test', () => {
   test('', () => {

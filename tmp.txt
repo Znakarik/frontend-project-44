@@ -1,0 +1,6 @@
+
+/Users/znakarik/WebstormProjects/frontend-project-44/src/games/general/NumbersAnswerChecker.js
+  5:11  error  Missing radix parameter  radix
+
+✖ 1 problem (1 error, 0 warnings)
+
