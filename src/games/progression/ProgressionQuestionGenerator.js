@@ -29,7 +29,8 @@ export class ProgressionQuestionGenerator extends QuestionGenerator {
     }
 
     #progressionToString(progression, missingIndex) {
-        progression[missingIndex] = '..';
-        return progression.join(' ');
+        const copy = [...progression];
+        copy[missingIndex] = '..';
+        return copy.join(' ');
     }
 }
