@@ -4,12 +4,12 @@ export default class PostAnswerAware {
     this.useNegative = negative;
   }
 
-  getPositive (name) {
+  getPositive(name) {
     if (this.usePositive) {
       return `Congratulations, ${name}!`;
     }
     throw new Error('should not use positive');
-  };
+  }
 
   getNegative = (rightAnswer, wrongAnswer) => {
     if (this.useNegative) {

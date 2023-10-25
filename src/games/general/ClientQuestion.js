@@ -3,7 +3,7 @@ export default class ClientQuestion {
     this.questionToClient = questionToClient;
   }
 
-  getQuestionToClient () {
-    return this.questionToClient
-  };
+  getQuestionToClient() {
+    return this.questionToClient;
+  }
 }

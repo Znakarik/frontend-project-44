@@ -10,7 +10,7 @@ import Round from '../../src/games/general/Round.js';
 import AnswerChecker from '../../src/games/general/AnswerChecker.js';
 import ClientQuestion from '../../src/games/general/ClientQuestion.js';
 
-function createCustomReadlineSyncReceiveSpy(readlineSync, returnVal) {
+function createCustomReadlineSyncReceiveSpy(readlineSync) {
   return jest.spyOn(readlineSync, 'receive');
 }
 
@@ -24,10 +24,10 @@ function createAnswerCheckerSpy(right, answerChecker) {
 
 function createQuestionGeneratorSpy(questionGenerator, answerChecker) {
   return jest.spyOn(questionGenerator, 'generate')
-      .mockImplementation(() => new Round(
-          answerChecker,
-          new ClientQuestion('questionToClient'),
-      ));
+    .mockImplementation(() => new Round(
+      answerChecker,
+      new ClientQuestion('questionToClient'),
+    ));
 }
 
 describe('suite', () => {
