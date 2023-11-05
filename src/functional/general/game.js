@@ -34,6 +34,4 @@ function initGame(rightAnswers, rules) {
   }
 }
 
-export {
-  initGame,
-};
+export default initGame;

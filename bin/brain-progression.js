@@ -6,6 +6,12 @@ import { generateRandomInt } from '../src/functional/general/math.js';
 const MAX_TRY = 3;
 const MAX_PROGRESSION_SIZE = 10;
 
+function progressionToString(progression, missingIndex) {
+  const copy = [...progression];
+  copy[missingIndex] = '..';
+  return copy.join(' ');
+}
+
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
@@ -28,12 +34,6 @@ function createRightAnswers() {
     i += 1;
   }
   return rightAnswers;
-}
-
-function progressionToString(progression, missingIndex) {
-  const copy = [...progression];
-  copy[missingIndex] = '..';
-  return copy.join(' ');
 }
 
 initGame(createRightAnswers(), 'What number is missing in the progression?');

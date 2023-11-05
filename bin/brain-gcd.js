@@ -5,6 +5,17 @@ import { generateRandomNonZero } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 
+function findGCD(left, right) {
+  let upper = left;
+  let divider = right;
+  while (divider) {
+    const tmp = divider;
+    divider = upper % divider;
+    upper = tmp;
+  }
+  return upper;
+}
+
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
@@ -17,17 +28,6 @@ function createRightAnswers() {
     i += 1;
   }
   return rightAnswers;
-}
-
-function findGCD(left, right) {
-  let upper = left;
-  let divider = right;
-  while (divider) {
-    const tmp = divider;
-    divider = upper % divider;
-    upper = tmp;
-  }
-  return upper;
 }
 
 initGame(createRightAnswers(), 'Find the greatest common divisor of given numbers.');
