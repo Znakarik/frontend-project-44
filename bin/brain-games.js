@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
-import {askName, showBaseGameStart, showGreetings, showRules} from '../src/functional/general/io.js'
+import {
+  askName, showBaseGameStart, showGreetings, showRules,
+} from '../src/functional/general/io.js';
 
 showBaseGameStart();
 const name = askName();
