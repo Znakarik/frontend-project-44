@@ -7,24 +7,27 @@ const MAX_TRY = 3;
 
 function createRightAnswers() {
   const rightAnswers = new Map();
-
-  for (let i = 0; i < MAX_TRY; i++) {
+  let i = 0;
+  while (i <= MAX_TRY) {
     const left = generateRandomNonZero(50);
     const right = generateRandomNonZero(50);
     const gcd = findGCD(left, right);
 
     rightAnswers.set(`${left} ${right}`, gcd);
+    i += 1;
   }
   return rightAnswers;
 }
 
 function findGCD(left, right) {
-  while (right) {
-    const tmp = right;
-    right = left % right;
-    left = tmp;
+  let upper = left;
+  let divider = right;
+  while (divider) {
+    const tmp = divider;
+    divider = upper % divider;
+    upper = tmp;
   }
-  return left;
+  return upper;
 }
 
 initGame(createRightAnswers(), 'Find the greatest common divisor of given numbers.');

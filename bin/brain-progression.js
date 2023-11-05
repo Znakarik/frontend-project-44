@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
 import { initGame } from '../src/functional/general/game.js';
-import { generateRandomInt, generateRandomNonZero } from '../src/functional/general/math.js';
+import { generateRandomInt } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 const MAX_PROGRESSION_SIZE = 10;
 
 function createRightAnswers() {
   const rightAnswers = new Map();
-
-  for (let i = 0; i < MAX_TRY; i++) {
+  let i = 0;
+  while (i <= MAX_TRY) {
     const step = generateRandomInt(10);
     const initialNumber = generateRandomInt(10);
     const missingIndexInProgression = generateRandomInt(MAX_PROGRESSION_SIZE);
@@ -17,12 +17,15 @@ function createRightAnswers() {
     const progression = [];
 
     progression.push(initialNumber);
-    for (let i = 1; i < MAX_PROGRESSION_SIZE; i++) {
-      progression.push(progression[i - 1] + step);
+    let j = 1;
+    while (j < MAX_PROGRESSION_SIZE) {
+      progression.push(progression[j - 1] + step);
+      j += 1;
     }
     const rightNumber = progression.at(missingIndexInProgression);
     const questionToClient = progressionToString(progression, missingIndexInProgression);
     rightAnswers.set(questionToClient, rightNumber);
+    i += 1;
   }
   return rightAnswers;
 }

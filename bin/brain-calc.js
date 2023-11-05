@@ -8,7 +8,8 @@ const MAX_TRY = 3;
 function createRightAnswers() {
   const rightAnswers = new Map();
 
-  for (let i = 0; i < MAX_TRY; i++) {
+  let i = 0;
+  while (i <= MAX_TRY) {
     const left = generateRandomInt(10);
     const right = generateRandomInt(10);
     const operation = generateOperation();
@@ -33,6 +34,7 @@ function createRightAnswers() {
     }
 
     rightAnswers.set(stringQuestion, rightAnswer);
+    i += 1;
   }
   return rightAnswers;
 }

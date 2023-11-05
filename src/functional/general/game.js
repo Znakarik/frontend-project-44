@@ -15,10 +15,12 @@ function initGame(rightAnswers, rules) {
   showRules(rules);
 
   let currentWinAmount = 0;
+  /* eslint-disable no-restricted-syntax */
   for (const [answerKey, rightAnswer] of rightAnswers) {
     currentWinAmount += 1;
     showQuestion(answerKey);
     const answer = askAnswer();
+    /* eslint-disable eqeqeq */
     if (answer != rightAnswer) {
       showFailedMessage(rightAnswer, answer);
       showMessage(`Let's try again, ${name}!`);

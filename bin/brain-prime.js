@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
 import { initGame } from '../src/functional/general/game.js';
-import { generateRandomNonZero } from '../src/functional/general/math.js';
 import { getRandomNumber } from '../src/functional/general/primeNumbersAware.js';
 
 const MAX_TRY = 3;
 
 function createRightAnswers() {
   const rightAnswers = new Map();
+  let i = 0;
 
-  for (let i = 0; i < MAX_TRY; i++) {
+  while (i <= MAX_TRY) {
     const rightAnswer = getRandomNumber();
     rightAnswers.set(rightAnswer, 'yes');
+    i += 1;
   }
   return rightAnswers;
 }

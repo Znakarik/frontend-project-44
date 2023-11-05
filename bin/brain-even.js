@@ -5,14 +5,16 @@ import { generateRandomInt } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 
-const rightAnswers = createRightAnswers();
-initGame(rightAnswers, 'Answer "yes" if the number is even, otherwise answer "no".');
-
 function createRightAnswers() {
   const rightAnswers = new Map();
-  for (let i = 0; i < MAX_TRY; i++) {
+  let i = 0;
+  while (i <= MAX_TRY) {
     const number = generateRandomInt(100);
     rightAnswers.set(number, number % 2 === 0 ? 'yes' : 'no');
+    i += 1;
   }
   return rightAnswers;
 }
+
+const rightAnswers = createRightAnswers();
+initGame(rightAnswers, 'Answer "yes" if the number is even, otherwise answer "no".');

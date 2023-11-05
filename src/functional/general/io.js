@@ -1,4 +1,4 @@
-import readlineSync, { question } from 'readline-sync';
+import readlineSync from 'readline-sync';
 
 function showBaseGameStart() {
   console.log('Welcome to the Brain Games!');
