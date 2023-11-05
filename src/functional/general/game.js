@@ -19,7 +19,7 @@ function initGame(rightAnswers, rules) {
         currentWinAmount += 1;
         showQuestion(answerKey);
         let answer = askAnswer();
-        if (answer !== rightAnswer) {
+        if (answer != rightAnswer) {
             showFailedMessage(rightAnswer, answer);
             showMessage(`Let's try again, ${name}!`);
             break;
