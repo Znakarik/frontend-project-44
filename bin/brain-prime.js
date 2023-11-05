@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { initGame } from '../src/functional/general/game.js';
+import initGame from '../src/functional/general/game.js';
 import { getRandomNumber } from '../src/functional/general/primeNumbersAware.js';
 
 const MAX_TRY = 3;
