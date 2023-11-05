@@ -6,7 +6,7 @@ import ClientQuestion from '../general/ClientQuestion.js';
 const MAX_PROGRESSION_SIZE = 10;
 
 export default class ProgressionQuestionGenerator extends QuestionGenerator {
-  generate = () => {
+  generate () {
     const step = Math.round(Math.random() * 10);
     const initialNumber = Math.round(Math.random() * 10);
     const missingIndexInProgression = Math.round(Math.random() * MAX_PROGRESSION_SIZE);

@@ -1,12 +1,9 @@
 import AnswerChecker from './AnswerChecker.js';
 
 export default class YesNoAnswerChecker extends AnswerChecker {
+
   isRightAnswer(clientAnswer) {
-    return isRightAnswer(clientAnswer, this.getRightAnswer);
+    const currentAnswer = clientAnswer === 'yes' ? 'yes' : 'no';
+    return currentAnswer === this.rightAnswer;
   }
 }
-
-const isRightAnswer = (answer, rightAnswer) => {
-  const currentAnswer = answer === 'yes' ? 'yes' : 'no';
-  return currentAnswer === rightAnswer;
-};

@@ -5,7 +5,7 @@ import { getRandomNumber } from './PrimeNumbersAware.js';
 import YesNoAnswerChecker from '../general/YesNoAnswerChecker.js';
 
 export default class PrimeQuestionGenerator extends QuestionGenerator {
-  generate = () => {
+  generate () {
     const rightAnswer = getRandomNumber();
     return new Round(
       new YesNoAnswerChecker('yes'),

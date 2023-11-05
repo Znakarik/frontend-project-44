@@ -11,7 +11,7 @@ export default class PostAnswerAware {
     throw new Error('should not use positive');
   }
 
-  getNegative = (rightAnswer, wrongAnswer) => {
+  getNegative (rightAnswer, wrongAnswer) {
     if (this.useNegative) {
       return `'${wrongAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`;
     }

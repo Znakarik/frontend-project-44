@@ -5,5 +5,7 @@ export default class CustomReadlineSync {
     console.log(str);
   }
 
-  receive = (str) => readlineSync.question(str);
+  receive (str){
+    return readlineSync.question(str)
+  };
 }

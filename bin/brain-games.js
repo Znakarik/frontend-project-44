@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
-import cli from '../src/cli.js';
+import {askName, showBaseGameStart, showGreetings} from '../src/functional/general/io.js'
 
-cli();
+showBaseGameStart();
+const name = askName();
+showGreetings(name);

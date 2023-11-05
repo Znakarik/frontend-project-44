@@ -30,7 +30,9 @@ export default class GameEngine {
     }
   }
 
-  #isLastTry = (currentTry) => currentTry === MAX_WIN_AMOUNT;
+  #isLastTry (currentTry) {
+    return currentTry === MAX_WIN_AMOUNT;
+  };
 
   #greetingAndGetName = () => {
     this.#log('Welcome to the Brain Games!');
