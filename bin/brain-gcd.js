@@ -8,7 +8,7 @@ const MAX_TRY = 3;
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
-  while (i <= MAX_TRY) {
+  while (i < MAX_TRY) {
     const left = generateRandomNonZero(50);
     const right = generateRandomNonZero(50);
     const gcd = findGCD(left, right);

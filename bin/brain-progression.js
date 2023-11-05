@@ -9,7 +9,7 @@ const MAX_PROGRESSION_SIZE = 10;
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
-  while (i <= MAX_TRY) {
+  while (i < MAX_TRY) {
     const step = generateRandomInt(10);
     const initialNumber = generateRandomInt(10);
     const missingIndexInProgression = generateRandomInt(MAX_PROGRESSION_SIZE);

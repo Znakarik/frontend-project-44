@@ -9,7 +9,7 @@ function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
 
-  while (i <= MAX_TRY) {
+  while (i < MAX_TRY) {
     const rightAnswer = getRandomNumber();
     rightAnswers.set(rightAnswer, 'yes');
     i += 1;
