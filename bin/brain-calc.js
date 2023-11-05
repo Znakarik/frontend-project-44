@@ -5,6 +5,26 @@ import { generateRandomInt } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 
+const Operation = {
+  multiply: 0,
+  sum: 1,
+  minus: 2,
+};
+
+function generateOperation() {
+  const randomNumber = Math.round(Math.random() * 2);
+  switch (randomNumber) {
+    case 0:
+      return Operation.multiply;
+    case 1:
+      return Operation.sum;
+    case 2:
+      return Operation.minus;
+    default:
+      throw new Error('unknown operation');
+  }
+}
+
 function createRightAnswers() {
   const rightAnswers = new Map();
 
@@ -38,25 +58,5 @@ function createRightAnswers() {
   }
   return rightAnswers;
 }
-
-function generateOperation() {
-  const randomNumber = Math.round(Math.random() * 2);
-  switch (randomNumber) {
-    case 0:
-      return Operation.multiply;
-    case 1:
-      return Operation.sum;
-    case 2:
-      return Operation.minus;
-    default:
-      throw new Error('unknown operation');
-  }
-}
-
-const Operation = {
-  multiply: 0,
-  sum: 1,
-  minus: 2,
-};
 
 initGame(createRightAnswers(), 'What is the result of the expression?');
