@@ -24,7 +24,7 @@ function createRightAnswers() {
 
     progression.push(initialNumber);
     let j = 1;
-    while (j < MAX_PROGRESSION_SIZE) {
+    while (j <= MAX_PROGRESSION_SIZE) {
       progression.push(progression[j - 1] + step);
       j += 1;
     }
@@ -33,6 +33,7 @@ function createRightAnswers() {
     rightAnswers.set(questionToClient, rightNumber);
     i += 1;
   }
+  console.log(JSON.stringify(rightAnswers, null, 2));
   return rightAnswers;
 }
 
