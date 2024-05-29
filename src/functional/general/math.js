@@ -11,6 +11,4 @@ function generateRandomNonZero(max) {
   return result;
 }
 
-export {
-  generateRandomInt, generateRandomNonZero,
-};
+export { generateRandomInt, generateRandomNonZero };

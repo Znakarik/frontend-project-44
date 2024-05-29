@@ -1,10 +1,13 @@
 import {
   askAnswer,
   askName,
-  showBaseGameStart, showFailedMessage, showGreetings, showMessage,
+  showBaseGameStart,
+  showFailedMessage,
+  showGreetings,
+  showMessage,
   showQuestion,
   showRules,
-} from './io.js';
+} from "./io.js";
 
 function initGame(rightAnswers, rules) {
   const maxGameTry = rightAnswers.size;
@@ -21,12 +24,12 @@ function initGame(rightAnswers, rules) {
     showQuestion(answerKey);
     const answer = askAnswer();
     /* eslint-disable eqeqeq */
-    if (answer != rightAnswer) {
+    if (answer !== rightAnswer) {
       showFailedMessage(rightAnswer, answer);
       showMessage(`Let's try again, ${name}!`);
       break;
     } else {
-      showMessage('Correct!');
+      showMessage("Correct!");
       if (currentWinAmount === maxGameTry) {
         console.log(`Congratulations, ${name}!`);
       }

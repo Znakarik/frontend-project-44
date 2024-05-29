@@ -1,11 +1,11 @@
-import readlineSync from 'readline-sync';
+import readlineSync from "readline-sync";
 
 function showBaseGameStart() {
-  console.log('Welcome to the Brain Games!');
+  console.log("Welcome to the Brain Games!");
 }
 
 function askName() {
-  return readlineSync.question('May I have your name? ');
+  return readlineSync.question("May I have your name? ");
 }
 
 function showGreetings(name) {
@@ -21,18 +21,25 @@ function showQuestion(question) {
 }
 
 function askAnswer() {
-  return readlineSync.question('Your answer: ');
+  return readlineSync.question("Your answer: ");
 }
 
 function showFailedMessage(rightAnswer, wrongAnswer) {
-  console.log(`'${wrongAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+  console.log(
+    `'${wrongAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`,
+  );
 }
 function showMessage(message) {
   console.log(message);
 }
 
 export {
-  showBaseGameStart, askName, showGreetings,
-  showRules, showQuestion, askAnswer, showFailedMessage,
+  showBaseGameStart,
+  askName,
+  showGreetings,
+  showRules,
+  showQuestion,
+  askAnswer,
+  showFailedMessage,
   showMessage,
 };
