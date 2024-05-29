@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-import initGame from "../src/functional/general/game.js";
-import { generateRandomInt } from "../src/functional/general/math.js";
+import initGame from '../src/functional/general/game.js';
+import { generateRandomInt } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 const MAX_PROGRESSION_SIZE = 10;
 
 function progressionToString(progression, missingIndex) {
   const copy = [...progression];
-  copy[missingIndex] = "..";
-  return copy.join(" ");
+  copy[missingIndex] = '..';
+  return copy.join(' ');
 }
 
 function createRightAnswers() {
@@ -40,4 +40,4 @@ function createRightAnswers() {
   return rightAnswers;
 }
 
-initGame(createRightAnswers(), "What number is missing in the progression?");
+initGame(createRightAnswers(), 'What number is missing in the progression?');

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import initGame from "../src/functional/general/game.js";
-import { getRandomNumber } from "../src/functional/general/primeNumbersAware.js";
+import initGame from '../src/functional/general/game.js';
+import { getRandomNumber } from '../src/functional/general/primeNumbersAware.js';
 
 const MAX_TRY = 3;
 
@@ -11,7 +11,7 @@ function createRightAnswers() {
 
   while (i < MAX_TRY) {
     const rightAnswer = getRandomNumber();
-    rightAnswers.set(rightAnswer, "yes");
+    rightAnswers.set(rightAnswer, 'yes');
     i += 1;
   }
   return rightAnswers;

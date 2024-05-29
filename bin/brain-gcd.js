@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import initGame from "../src/functional/general/game.js";
-import { generateRandomNonZero } from "../src/functional/general/math.js";
+import initGame from '../src/functional/general/game.js';
+import { generateRandomNonZero } from '../src/functional/general/math.js';
 
 const MAX_TRY = 3;
 
@@ -32,5 +32,5 @@ function createRightAnswers() {
 
 initGame(
   createRightAnswers(),
-  "Find the greatest common divisor of given numbers.",
+  'Find the greatest common divisor of given numbers.',
 );

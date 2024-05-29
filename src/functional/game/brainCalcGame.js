@@ -1,5 +1,5 @@
-import initGame from "../general/game.js";
-import { generateRandomInt } from "../general/math.js";
+import initGame from '../general/game.js';
+import { generateRandomInt } from '../general/math.js';
 
 const MAX_TRY = 3;
 
@@ -19,7 +19,7 @@ function generateOperation() {
     case 2:
       return Operation.minus;
     default:
-      throw new Error("unknown operation");
+      throw new Error('unknown operation');
   }
 }
 
@@ -60,6 +60,6 @@ function createQuestionsAndRightAnswers() {
 export default function startGame() {
   initGame(
     createQuestionsAndRightAnswers(),
-    "What is the result of the expression?",
+    'What is the result of the expression?',
   );
 }

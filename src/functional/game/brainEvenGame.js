@@ -1,5 +1,5 @@
-import initGame from "../general/game.js";
-import { generateRandomInt } from "../general/math.js";
+import initGame from '../general/game.js';
+import { generateRandomInt } from '../general/math.js';
 
 const MAX_TRY = 3;
 
@@ -8,7 +8,7 @@ function createRightAnswers() {
   let i = 0;
   while (i < MAX_TRY) {
     const number = generateRandomInt(100);
-    rightAnswers.set(number, number % 2 === 0 ? "yes" : "no");
+    rightAnswers.set(number, number % 2 === 0 ? 'yes' : 'no');
     i += 1;
   }
   return rightAnswers;
