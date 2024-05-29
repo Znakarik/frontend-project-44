@@ -24,7 +24,7 @@ function initGame(rightAnswers, rules) {
     showQuestion(answerKey);
     const answer = askAnswer();
     /* eslint-disable eqeqeq */
-    if (answer !== rightAnswer) {
+    if (answer != rightAnswer) {
       showFailedMessage(rightAnswer, answer);
       showMessage(`Let's try again, ${name}!`);
       break;
