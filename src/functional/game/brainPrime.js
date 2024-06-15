@@ -1,13 +1,13 @@
 import initGame from '../general/game.js';
 import { getRandomNumber } from '../general/primeNumbersAware.js';
 
-const MAX_TRY = 3;
+const attemptsAmount = 3;
 
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
 
-  while (i < MAX_TRY) {
+  while (i < attemptsAmount) {
     const rightAnswer = getRandomNumber();
     rightAnswers.set(rightAnswer, 'yes');
     i += 1;

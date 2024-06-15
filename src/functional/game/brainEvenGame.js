@@ -1,12 +1,12 @@
 import initGame from '../general/game.js';
 import { generateRandomInt } from '../general/math.js';
 
-const MAX_TRY = 3;
+const attemptsAmount = 3;
 
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
-  while (i < MAX_TRY) {
+  while (i < attemptsAmount) {
     const number = generateRandomInt(100);
     rightAnswers.set(number, number % 2 === 0 ? 'yes' : 'no');
     i += 1;

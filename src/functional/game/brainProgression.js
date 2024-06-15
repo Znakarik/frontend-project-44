@@ -1,7 +1,7 @@
 import initGame from '../general/game.js';
 import { generateRandomInt } from '../general/math.js';
 
-const MAX_TRY = 3;
+const attemptsAmount = 3;
 const MAX_PROGRESSION_SIZE = 10;
 
 function progressionToString(progression, missingIndex) {
@@ -13,7 +13,7 @@ function progressionToString(progression, missingIndex) {
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
-  while (i < MAX_TRY) {
+  while (i < attemptsAmount) {
     const step = generateRandomInt(10);
     const initialNumber = generateRandomInt(10);
     const missingIndexInProgression = generateRandomInt(MAX_PROGRESSION_SIZE);

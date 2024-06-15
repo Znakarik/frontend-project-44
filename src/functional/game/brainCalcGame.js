@@ -1,7 +1,7 @@
 import initGame from '../general/game.js';
 import { generateRandomInt } from '../general/math.js';
 
-const MAX_TRY = 3;
+const attemptsAmount = 3;
 
 const Operation = {
   multiply: 0,
@@ -27,7 +27,7 @@ function createQuestionsAndRightAnswers() {
   const rightAnswers = new Map();
 
   let i = 0;
-  while (i < MAX_TRY) {
+  while (i < attemptsAmount) {
     const left = generateRandomInt(10);
     const right = generateRandomInt(10);
     const operation = generateOperation();

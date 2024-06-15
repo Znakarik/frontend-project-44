@@ -1,7 +1,7 @@
 import initGame from '../general/game.js';
 import { generateRandomNonZero } from '../general/math.js';
 
-const MAX_TRY = 3;
+const attemptsAmount = 3;
 
 function findGCD(left, right) {
   let upper = left;
@@ -17,7 +17,7 @@ function findGCD(left, right) {
 function createRightAnswers() {
   const rightAnswers = new Map();
   let i = 0;
-  while (i < MAX_TRY) {
+  while (i < attemptsAmount) {
     const left = generateRandomNonZero(50);
     const right = generateRandomNonZero(50);
     const gcd = findGCD(left, right);
